@@ -14,8 +14,9 @@
     "method-override": "2.3.x",
     "morgan": "1.8.x",
     "errorhandler": "1.5.x",
-    "connect-multiparty": "2.0.x"
-    "serve-static": "^1.5.0"
+    "connect-multiparty": "2.0.x",
+    "serve-static": "^1.5.0",
+    "connect": "^2.0.0"
   },
   "repository": {},
   "engines": {
