@@ -1,0 +1,103 @@
+<!doctype html>
+<html ng-app="myApp">
+<style>
+body {
+    background-size: cover;
+    background-image: url(css/background.jpg);
+    background-repeat: no-repeat;
+}
+
+
+.SearchBar {
+   width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+            }
+            
+.Result {
+   width: 500px;
+  height: 100px;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: white;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+            }
+            
+.Title {
+   width: 332px;
+  height: 100px;
+  border: none;
+  font-size: 50pt;
+  float: right;
+  color: white;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+            }
+.box{
+  margin: 100px auto;
+  width: 300px;
+  height: 50px;
+}   
+
+.box2{
+  margin: 100px auto;
+  width: 500px;
+  height: 500px;
+}      
+
+</style>
+<head>
+<title>City Finder</title>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+<script src="controller.js"></script>
+
+</head>
+<body ng-controller="myCtrl">
+<div class=box>
+	
+	<form name="searchName" ng-submit="search(cName)">
+		<h1 class="Title">City Finder</h1>
+		<input class="SearchBar" type="search" required placeholder="Search for City" ng-model="cName" ng-enter="DoWork()"/>
+	<input ng-hide="true" class="Submit" type="submit" ng-click="showTheForm = true" />
+		
+	</form>
+</div>
+	<div class="box2" ng-show=showTheForm>
+		
+			<form class="Result" name="Data">
+			
+			
+			<h1>{{error}}</h1>
+			<h1>City: {{country.name}}, {{times.countryName}}</h1>
+			<h2>Date: {{date}}</h2>
+			<h2>Time: {{curTime}}  Sunrise: {{sunrise}}  Sunset: {{sunset}}</h2>
+			<h2  style="text-transform: capitalize;">Forecast: {{country.weather[0].description }} </h2>
+			<h2>Temp: {{(country.main.temp )}} &#8451;</h2>
+			<h2>Humidity: {{country.main.humidity}}%</h2>
+			<h2>Max Temp: {{country.main.temp_max }} &#8451;</h2>
+			<h2>Min Temp: {{country.main.temp_min }} &#8451;</h2>
+			<h2>Wind Speed: {{country.wind.speed}} meters/sec</h2>
+			<h2>Clouds: {{country.clouds.all}}%</h2>
+			</form>
+			
+	
+		
+	</div>
+</body>
+</html>
