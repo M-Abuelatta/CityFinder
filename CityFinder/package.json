@@ -1,7 +1,7 @@
 
 {
   "name": "CityFinder_nodejs",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -15,9 +15,11 @@
     "morgan": "1.8.x",
     "errorhandler": "1.5.x",
     "connect-multiparty": "2.0.x"
+    "serve-static": "^1.5.0"
   },
   "repository": {},
   "engines": {
     "node": "6.x"
   }
 }
+
